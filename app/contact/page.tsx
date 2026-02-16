@@ -1,12 +1,13 @@
 "use client";
-import { Github, Mail, LinkedIn } from "lucide-react";
+import { Github, Mail} from "lucide-react";
+import { FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 
 const socials = [
   {
-    icon: <LinkedIn size={20} />,
+    icon: <FaLinkedin size={20} />,
     href: "https://www.linkedin.com/in/boipelodev/",
     label: "LinkedIn",
     handle: "BoipeloDev",
