@@ -6,19 +6,19 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "chronark.com",
-    template: "%s | chronark.com",
+    default: "boipleo.codes",
+    template: "%s | boipleo.codes",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description: "Aspiring software engineer.",
   openGraph: {
-    title: "chronark.com",
+    title: "boipleo.codes",
     description:
-      "Co-founder of unkey.dev and founder of planetfall.io",
-    url: "https://chronark.com",
-    siteName: "chronark.com",
+      "Aspiring software engineer.",
+    url: "https://boipleo.codes",
+    siteName: "boipleo.codes",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "https://boipleo.codes/og.png",
         width: 1920,
         height: 1080,
       },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Chronark",
+    title: "boipleo.codes",
     card: "summary_large_image",
   },
   icons: {
