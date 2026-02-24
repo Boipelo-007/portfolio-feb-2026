@@ -1,0 +1,61 @@
+---
+title: Babyfiction E-Commerce Platform
+description: A full-stack e-commerce platform for fashion and accessories with advanced features
+repository: boipelo/babyfiction
+url: https://boipelo.codes
+date: 2025-11-01
+published: true
+---
+
+## Overview
+
+Babyfiction is a production-ready e-commerce platform built for fashion and accessories retail. It features a complete shopping experience with modern UI/UX, comprehensive backend services, and advanced business functionality including driver management, promotions, and multi-channel notifications.
+
+## Tech Stack
+
+**Frontend:**
+- Next.js with TypeScript
+- React with Radix UI components
+- Tailwind CSS for styling
+- shadcn/ui component library
+
+**Backend:**
+- Node.js with Express
+- MongoDB with Mongoose
+- JWT authentication
+- Cloudinary for media management
+
+## Key Features
+
+### Core E-Commerce
+- Product catalog with categories and search
+- Shopping cart (guest + authenticated users)
+- Wishlist functionality
+- Secure checkout process
+- Order management system
+- Product reviews and ratings
+- Admin dashboard for inventory management
+
+### Advanced Features
+- **Email Service** - Resend integration for password resets and order confirmations
+- **SMS Notifications** - Real-time order status updates via SMS gateway
+- **Driver Portal** - Dedicated interface for delivery personnel
+- **Promotions System** - Discount codes, sales, and marketing campaigns
+- **Newsletter System** - Email marketing and subscriber management
+- **Chatbot** - AI-powered customer support
+- **Analytics** - Track user behavior and sales metrics
+- **Google reCAPTCHA** - Security against brute force attacks
+
+### User Experience
+- Responsive, mobile-first design
+- Dark mode UI
+- Real-time cart updates
+- ZAR currency display with 15% VAT calculation
+- Password visibility toggles
+- Persistent cart and wishlist
+
+## Architecture Highlights
+
+The platform implements a clean separation between frontend and backend services, with robust middleware for authentication, rate limiting, and validation. Cart and wishlist data persist across sessions with MongoDB session storage, while media assets are optimized and delivered through Cloudinary CDN.
+
+If you'd like to explore the implementation details, check out the [Repository on GitHub](https://github.com/boipelo/babyfiction).
