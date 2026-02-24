@@ -110,7 +110,7 @@ export default function AboutPage() {
                       Full-Stack Developer at Tech Solutions
                     </h3>
                     <span className="text-sm text-zinc-400 whitespace-nowrap ml-4">
-                      Jan. 2025 – Present
+                      Jan. 2024 – Present
                     </span>
                   </div>
                   <p className="text-sm text-amber-500 mb-3">Midrand</p>
@@ -131,8 +131,32 @@ export default function AboutPage() {
                 </div>
 
                 {/* Job 2 */}
-                
-              
+                <div className="border-l-2 border-amber-500 pl-6">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-xl font-semibold text-zinc-100">
+                      Junior Developer at Digital Agency
+                    </h3>
+                    <span className="text-sm text-zinc-400 whitespace-nowrap ml-4">
+                      Jun. 2022 – Dec. 2023
+                    </span>
+                  </div>
+                  <p className="text-sm text-amber-500 mb-3">Midrand</p>
+                  <ul className="space-y-2 text-zinc-300 text-sm">
+                    <li>
+                      • Assisted in building responsive web applications with
+                      modern JavaScript frameworks
+                    </li>
+                    <li>
+                      • Utilized version control systems and agile methodologies
+                      for efficient project management
+                    </li>
+                    <li>
+                      • Created reusable components and implemented best
+                      practices for code quality
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </Card>
 
@@ -156,31 +180,31 @@ export default function AboutPage() {
 
             {/* Languages Section */}
             <Card>
-              <div className="p-8">
-                <h2 className="text-2xl font-bold text-zinc-100 mb-6 uppercase tracking-wider">
-                  Languages
-                </h2>
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-lg font-semibold text-zinc-100">
-                      English
-                    </h3>
-                    <p className="text-sm text-zinc-400 italic">Fluent</p>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-zinc-100">
-                      SeSotho
-                    </h3>
-                    <p className="text-sm text-zinc-400 italic">Native</p>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-zinc-100">
-                      SeTswana
-                    </h3>
-                    <p className="text-sm text-zinc-400 italic">Conversational</p>
-                  </div>
+                <div className="p-8">
+                    <h2 className="text-2xl font-bold text-zinc-100 mb-6 uppercase tracking-wider">
+                    Languages
+                    </h2>
+                    <div className="space-y-4">
+                        <div>
+                            <h3 className="text-lg font-semibold text-zinc-100">
+                            English
+                            </h3>
+                            <p className="text-sm text-zinc-400 italic">Fluent</p>
+                        </div>
+                        <div>
+                            <h3 className="text-lg font-semibold text-zinc-100">
+                            SeSotho
+                            </h3>
+                            <p className="text-sm text-zinc-400 italic">Native</p>
+                        </div>
+                        <div>
+                            <h3 className="text-lg font-semibold text-zinc-100">
+                            SeTswana
+                            </h3>
+                            <p className="text-sm text-zinc-400 italic">Conversational</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </Card>
           </div>
         </div>
