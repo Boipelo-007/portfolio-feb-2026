@@ -1,28 +1,28 @@
 "use client";
-import { Github, Mail, Linkedin} from "lucide-react";
+import { Github, Mail, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 
 const socials = [
-  {
-    icon: <Linkedin size={20} />,
-    href: "https://www.linkedin.com/in/boipelodev/",
-    label: "LinkedIn",
-    handle: "BoipeloDev",
-  },
-  {
-    icon: <Mail size={20} />,
-    href: "mailto:boipelodev@outlook.com",
-    label: "Email",
-    handle: "boipelodev@outlook.com",
-  },
-  {
-    icon: <Github size={20} />,
-    href: "https://github.com/Boipelo-007",
-    label: "Github",
-    handle: "Boipelo-007",
-  },
+	{
+		icon: <Linkedin size={20} />,
+		href: "https://www.linkedin.com/in/boipelodev/",
+		label: "LinkedIn",
+		handle: "BoipeloDev",
+	},
+	{
+		icon: <Mail size={20} />,
+		href: "mailto:boipelodev@outlook.com",
+		label: "Email",
+		handle: "boipelodev@outlook.com",
+	},
+	{
+		icon: <Github size={20} />,
+		href: "https://github.com/Boipelo-007",
+		label: "Github",
+		handle: "Boipelo-007",
+	},
 ];
 
 export default function Example() {
