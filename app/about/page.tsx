@@ -14,10 +14,30 @@ export default function AboutPage() {
     ];
 
     const contactInfo = [
-        { icon: <Mail size={16} />, label: "EMAIL", value: "boipelodev@outlook.com" },
-        { icon: <MapPin size={16} />, label: "LOCATION", value: "Midrand, South Africa" },
-        { icon: <Phone size={16} />, label: "PHONE", value: "+27 81 753 0293" },
-        { icon: <Linkedin size={16} />, label: "LINKEDIN", value: "boipelo-dev" },
+      {
+        icon: <Mail size={16} />,
+        label: "EMAIL",
+        value: "boipelodev@outlook.com",
+        href: "mailto:boipelodev@outlook.com",
+      },
+      {
+        icon: <MapPin size={16} />,
+        label: "LOCATION",
+        value: "Midrand, South Africa",
+        href: "https://maps.google.com/?q=Midrand,+South+Africa",
+      },
+      {
+        icon: <Phone size={16} />,
+        label: "PHONE",
+        value: "+27 81 753 0293",
+        href: "tel:+27817530293",
+      },
+      {
+        icon: <Linkedin size={16} />,
+        label: "LINKEDIN",
+        value: "boipelo-dev",
+        href: "https://www.linkedin.com/in/boipelodev/",
+      },
     ];
 
     return (
@@ -38,15 +58,23 @@ export default function AboutPage() {
           {/* Contact Info Bar */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-16">
             {contactInfo.map((info, idx) => (
-              <div key={idx} className="flex flex-col">
+              <a
+                key={idx}
+                href={info.href}
+                target={info.label === "EMAIL" || info.label === "PHONE" ? "_self" : "_blank"}
+                rel={info.label === "EMAIL" || info.label === "PHONE" ? undefined : "noreferrer"}
+                className="group flex flex-col rounded-lg p-3 -m-3 transition-colors duration-300 hover:bg-zinc-800/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/70"
+              >
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-amber-500">{info.icon}</span>
                   <span className="text-xs text-amber-500 font-semibold tracking-wider">
                     {info.label}
                   </span>
                 </div>
-                <p className="text-sm text-zinc-300">{info.value}</p>
-              </div>
+                <p className="text-sm text-zinc-300 transition-colors duration-300 group-hover:text-zinc-100">
+                  {info.value}
+                </p>
+              </a>
             ))}
           </div>
 
