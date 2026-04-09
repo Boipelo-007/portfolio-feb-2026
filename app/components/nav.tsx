@@ -42,7 +42,7 @@ export const Navigation: React.FC = () => {
 						</Link>
 						<Link
 							href="/about"
-							className="duration-200 text-zinc-400 hover:text-zinc-100"	
+							className="duration-200 text-zinc-400 hover:text-zinc-100"
 						>
 							About
 						</Link>
@@ -59,4 +59,4 @@ export const Navigation: React.FC = () => {
 		</header>
 	);
 };
-``
+("");
