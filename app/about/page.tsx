@@ -5,12 +5,12 @@ import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
 
 export default function AboutPage() {
     const skills = [
-        "Marketing analytics",
-        "Communication",
-        "Social Media Management",
-        "Strategic planning",
-        "Google AdWords",
-        "SEO"
+      "JavaScript (ES6+)",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Node.js",
+      "REST APIs"
     ];
 
     const contactInfo = [
