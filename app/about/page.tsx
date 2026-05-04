@@ -107,25 +107,25 @@ export default function AboutPage() {
                 <div className="border-l-2 border-amber-500 pl-6">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="text-xl font-semibold text-zinc-100">
-                      Full-Stack Developer at Tech Solutions
+                      Babyfiction E-Commerce Platform
                     </h3>
                     <span className="text-sm text-zinc-400 whitespace-nowrap ml-4">
-                      Jan. 2024 – Present
+                      Next.js, Node.js, MongoDB
                     </span>
                   </div>
-                  <p className="text-sm text-amber-500 mb-3">Midrand</p>
+                  <p className="text-sm text-amber-500 mb-3">Full-stack e-commerce project</p>
                   <ul className="space-y-2 text-zinc-300 text-sm">
                     <li>
-                      • Developed and maintained full-stack e-commerce
-                      applications using Next.js, React, and Node.js
+                      • Built a production-ready fashion and accessories store
+                      with a modern Next.js and TypeScript frontend
                     </li>
                     <li>
-                      • Implemented advanced features including payment
-                      integration, real-time notifications, and admin dashboards
+                      • Added cart, wishlist, checkout, reviews, and admin
+                      inventory management flows
                     </li>
                     <li>
-                      • Collaborated with cross-functional teams to deliver
-                      high-quality solutions on schedule
+                      • Integrated backend services for authentication, media
+                      uploads, notifications, and analytics
                     </li>
                   </ul>
                 </div>
@@ -134,25 +134,25 @@ export default function AboutPage() {
                 <div className="border-l-2 border-amber-500 pl-6">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="text-xl font-semibold text-zinc-100">
-                      Junior Developer at Digital Agency
+                      C2C E-Commerce Platform
                     </h3>
                     <span className="text-sm text-zinc-400 whitespace-nowrap ml-4">
-                      Jun. 2022 – Dec. 2023
+                      PHP, MySQL
                     </span>
                   </div>
-                  <p className="text-sm text-amber-500 mb-3">Midrand</p>
+                  <p className="text-sm text-amber-500 mb-3">Marketplace project</p>
                   <ul className="space-y-2 text-zinc-300 text-sm">
                     <li>
-                      • Assisted in building responsive web applications with
-                      modern JavaScript frameworks
+                      • Built a PHP and MySQL marketplace for buying and
+                      selling products online
                     </li>
                     <li>
-                      • Utilized version control systems and agile methodologies
-                      for efficient project management
+                      • Implemented product listings, search, category filters,
+                      and user authentication
                     </li>
                     <li>
-                      • Created reusable components and implemented best
-                      practices for code quality
+                      • Created an admin dashboard to manage listings, users,
+                      and transactions
                     </li>
                   </ul>
                 </div>
