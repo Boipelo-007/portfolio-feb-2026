@@ -30,7 +30,7 @@ export default function AboutPage() {
             <h1 className="text-5xl md:text-7xl font-bold text-zinc-100 mb-2">
               Boipelo Monametsi
             </h1>
-            <p className="text-xl md:text-2xl text-amber-500 font-medium">
+            <p className="text-xl md:text-2xl text-[#154367] font-medium">
               SOFTWARE DEVELOPER
             </p>
           </div>
@@ -40,8 +40,8 @@ export default function AboutPage() {
             {contactInfo.map((info, idx) => (
               <div key={idx} className="flex flex-col">
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-amber-500">{info.icon}</span>
-                  <span className="text-xs text-amber-500 font-semibold tracking-wider">
+                  <span className="text-[#154367]">{info.icon}</span>
+                  <span className="text-xs text-[#154367] font-semibold tracking-wider">
                     {info.label}
                   </span>
                 </div>
@@ -81,8 +81,8 @@ export default function AboutPage() {
                   {skills.map((skill, idx) => (
                     <div
                       key={idx}
-                      className="bg-amber-600/20 border border-amber-600/40 rounded-full px-6 py-3 
-                                        text-zinc-200 text-sm font-medium hover:bg-amber-600/30 transition-colors duration-300"
+                      className="bg-[#5f6670]-600/40 border border-[#154367]/40 rounded-full px-6 py-3 
+                                        text-zinc-200 text-sm font-medium hover:bg-[#154367]/30 transition-colors duration-300"
                       style={{
                         transform: `scale(${1 + (idx % 3) * 0.15})`,
                       }}
@@ -104,7 +104,7 @@ export default function AboutPage() {
 
               <div className="space-y-8">
                 {/* Job 1 */}
-                <div className="border-l-2 border-amber-500 pl-6">
+                <div className="border-l-2 border-[#154367] pl-6">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="text-xl font-semibold text-zinc-100">
                       Babyfiction E-Commerce Platform
@@ -113,7 +113,9 @@ export default function AboutPage() {
                       Next.js, Node.js, MongoDB
                     </span>
                   </div>
-                  <p className="text-sm text-amber-500 mb-3">Full-stack e-commerce project</p>
+                  <p className="text-sm text-[#7cb4c8] mb-3">
+                    Full-stack e-commerce project
+                  </p>
                   <ul className="space-y-2 text-zinc-300 text-sm">
                     <li>
                       • Built a production-ready fashion and accessories store
@@ -131,7 +133,7 @@ export default function AboutPage() {
                 </div>
 
                 {/* Job 2 */}
-                <div className="border-l-2 border-amber-500 pl-6">
+                <div className="border-l-2 border-[#154367] pl-6">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="text-xl font-semibold text-zinc-100">
                       C2C E-Commerce Platform
@@ -140,11 +142,13 @@ export default function AboutPage() {
                       PHP, MySQL
                     </span>
                   </div>
-                  <p className="text-sm text-amber-500 mb-3">Marketplace project</p>
+                  <p className="text-sm text-[#7cb4c8] mb-3">
+                    Marketplace project
+                  </p>
                   <ul className="space-y-2 text-zinc-300 text-sm">
                     <li>
-                      • Built a PHP and MySQL marketplace for buying and
-                      selling products online
+                      • Built a PHP and MySQL marketplace for buying and selling
+                      products online
                     </li>
                     <li>
                       • Implemented product listings, search, category filters,
@@ -168,43 +172,54 @@ export default function AboutPage() {
                 <h2 className="text-2xl font-bold text-zinc-100 mb-6 uppercase tracking-wider">
                   Education
                 </h2>
-                <div className="border-l-2 border-amber-500 pl-6">
+                <div className="border-l-2 border-[#154367] pl-6">
                   <h3 className="text-xl font-semibold text-zinc-100 mb-1">
                     BSc in Computer Science
                   </h3>
-                  <p className="text-sm text-amber-500 mb-2">Eduvos</p>
-                  <p className="text-sm text-zinc-400">Feb. 2022 – Dec. 2025</p>
+                  <p className="text-sm text-[#7cb4c8] mb-2">Eduvos</p>
+                  <p className="text-sm text-zinc-400">Feb. 2023 – Dec. 2025</p>
+                </div>
+                <div className="border-l-2 border-[#154367] pl-6">
+                  <h3 className="text-xl font-semibold text-zinc-100 mb-1">
+                    National Senior Certificate
+                  </h3>
+                  <p className="text-sm text-[#7cb4c8] mb-2">
+                    Suncrest High School
+                  </p>
+                  <p className="text-sm text-zinc-400">Jan. 2022 – Dec. 2022</p>
                 </div>
               </div>
             </Card>
 
             {/* Languages Section */}
             <Card>
-                <div className="p-8">
-                    <h2 className="text-2xl font-bold text-zinc-100 mb-6 uppercase tracking-wider">
-                    Languages
-                    </h2>
-                    <div className="space-y-4">
-                        <div>
-                            <h3 className="text-lg font-semibold text-zinc-100">
-                            English
-                            </h3>
-                            <p className="text-sm text-zinc-400 italic">Fluent</p>
-                        </div>
-                        <div>
-                            <h3 className="text-lg font-semibold text-zinc-100">
-                            SeSotho
-                            </h3>
-                            <p className="text-sm text-zinc-400 italic">Native</p>
-                        </div>
-                        <div>
-                            <h3 className="text-lg font-semibold text-zinc-100">
-                            SeTswana
-                            </h3>
-                            <p className="text-sm text-zinc-400 italic">Conversational</p>
-                        </div>
-                    </div>
+              <div className="p-8">
+                <h2 className="text-2xl font-bold text-zinc-100 mb-6 uppercase tracking-wider">
+                  Languages
+                </h2>
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="text-lg font-semibold text-zinc-100">
+                      English
+                    </h3>
+                    <p className="text-sm text-zinc-400 italic">Fluent</p>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-zinc-100">
+                      SeSotho
+                    </h3>
+                    <p className="text-sm text-zinc-400 italic">Native</p>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-zinc-100">
+                      SeTswana
+                    </h3>
+                    <p className="text-sm text-zinc-400 italic">
+                      Conversational
+                    </p>
+                  </div>
                 </div>
+              </div>
             </Card>
           </div>
         </div>
