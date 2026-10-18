@@ -1,0 +1,15 @@
+
+Projects
+
+- Babyfiction — Production-ready e-commerce platform for fashion & accessories.
+  - Technologies: Next.js; TypeScript; React; Radix UI; Tailwind CSS; shadcn/ui; Node.js; Express; MongoDB (Mongoose); Cloudinary; JWT
+  - Practices: Component-driven UI; responsive / mobile-first design; accessibility; secure JWT authentication; RESTful API design; media optimization (Cloudinary); session persistence; analytics & monitoring; CI/CD and automated deployments; performance tuning
+
+- boipelo.codes — Personal portfolio showcasing projects and technical writing.
+  - Technologies: Next.js; TypeScript; React; Contentlayer (MDX); Tailwind CSS; Vercel; custom particle animations
+  - Practices: MDX-driven content architecture; component reusability; SEO & performance optimization; responsive and accessible design; strict TypeScript typing; lightweight analytics; iterative deployment
+
+- C2C Marketplace (MarketprojectECA) — Full-featured marketplace platform.
+  - Technologies: PHP; MySQL; HTML/CSS; JavaScript
+  - Practices: Server-side rendering; relational data modelling; secure authentication and role-based access control; input validation & sanitization; admin dashboard and transaction handling; search and category filtering; data integrity and backups
+
