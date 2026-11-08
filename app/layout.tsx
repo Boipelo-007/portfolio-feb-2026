@@ -1,6 +1,5 @@
 import "../global.css";
-import { Inter } from "@next/font/google";
-import LocalFont from "@next/font/local";
+import { IBM_Plex_Sans, Sora } from "next/font/google";
 import { Metadata } from "next";
 import { Analytics as BeamAnalytics } from "./components/analytics";
 import { Analytics } from "@vercel/analytics/next";
@@ -45,14 +44,16 @@ export const metadata: Metadata = {
 		shortcut: "/favicon.png",
 	},
 };
-const inter = Inter({
+const plexSans = IBM_Plex_Sans({
 	subsets: ["latin"],
-	variable: "--font-inter",
+	weight: ["400", "500", "600", "700"],
+	variable: "--font-plex-sans",
 });
 
-const calSans = LocalFont({
-	src: "../public/fonts/CalSans-SemiBold.ttf",
-	variable: "--font-calsans",
+const sora = Sora({
+	subsets: ["latin"],
+	weight: ["400", "500", "600", "700"],
+	variable: "--font-sora",
 });
 
 export default function RootLayout({
@@ -61,12 +62,12 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
+		<html lang="en" className={[plexSans.variable, sora.variable].join(" ")}>
 			<head>
 				<BeamAnalytics />
 			</head>
 			<body
-				className={`bg-black ${
+				className={`bg-[#050608] font-sans ${
 					process.env.NODE_ENV === "development" ? "debug-screens" : undefined
 				}`}
 			>

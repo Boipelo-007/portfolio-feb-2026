@@ -4,17 +4,11 @@ import { Mdx } from "@/app/components/mdx";
 import { Header } from "./header";
 import "./mdx.css";
 import { ReportView } from "./view";
-import { Redis } from "@upstash/redis";
+import { redis } from "@/util/redis";
 
 export const revalidate = 60;
 
-type Props = {
-	params: {
-		slug: string;
-	};
-};
-
-const redis = Redis.fromEnv();
+type Props = { params: { slug: string } };
 
 export async function generateStaticParams(): Promise<Props["params"][]> {
 	return allProjects
@@ -32,8 +26,9 @@ export default async function PostPage({ params }: Props) {
 		notFound();
 	}
 
-	const views =
-		(await redis.get<number>(["pageviews", "projects", slug].join(":"))) ?? 0;
+	const views = redis
+		? (await redis.get<number>(["pageviews", "projects", slug].join(":"))) ?? 0
+		: 0;
 
 	return (
 		<div className="min-h-screen bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">

@@ -3,8 +3,22 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    color-scheme: dark;
+    --space-ink: #050608;
+    --space-surface: #0b0c0f;
+    --space-line: rgba(255, 255, 255, 0.12);
+  }
+
+  html {
+    background: var(--space-ink);
+  }
+
+  body {
+    color: #e4e4e7;
+  }
+
   .text-edge-outline {
     -webkit-text-stroke: 1px rgba(255,255,255,0.3);
   }
 } 
-
