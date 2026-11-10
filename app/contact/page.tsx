@@ -39,17 +39,17 @@ export default function Example() {
 								className="p-4 relative flex flex-col items-center gap-4 duration-700 group md:gap-8 md:py-24  lg:pb-48  md:p-16"
 							>
 								<span
-									className="absolute w-px h-2/3 bg-gradient-to-b from-[#154367] via-[#7cb4c8]/50 to-transparent"
+									className="absolute w-px h-2/3 bg-gradient-to-b from-white/40 via-white/10 to-transparent"
 									aria-hidden="true"
 								/>
-								<span className="relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-1000 border rounded-full text-[#7cb4c8] group-hover:text-white group-hover:bg-[#154367] border-[#154367]/60 bg-zinc-900 group-hover:border-[#7cb4c8] drop-shadow-orange">
+								<span className="relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-300 border rounded-full text-zinc-300 group-hover:text-white group-hover:bg-zinc-800 border-white/15 bg-zinc-900 group-hover:border-white/40">
 									{s.icon}
 								</span>{" "}
 								<div className="z-10 flex flex-col items-center">
-									<span className="lg:text-xl font-medium duration-150 xl:text-3xl text-zinc-100 group-hover:text-[#7cb4c8] font-display">
+									<span className="lg:text-xl font-medium duration-150 xl:text-3xl text-zinc-100 group-hover:text-white font-display">
 										{s.handle}
 									</span>
-									<span className="mt-4 text-sm text-center duration-1000 text-[#7cb4c8] group-hover:text-zinc-200">
+									<span className="mt-4 text-sm text-center duration-300 text-zinc-400 group-hover:text-zinc-200">
 										{s.label}
 									</span>
 								</div>

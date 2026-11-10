@@ -9,6 +9,7 @@ type Props = {
 		title: string;
 		description: string;
 		repository?: string;
+		status?: string;
 	};
 
 	views: number;
@@ -49,7 +50,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 				className={`fixed inset-x-0 top-0 z-50 backdrop-blur lg:backdrop-blur-none duration-200 border-b lg:bg-transparent ${
 					isIntersecting
 						? "bg-zinc-900/0 border-transparent"
-						: "bg-zinc-950/70 border-[#154367]/20 lg:border-transparent"
+						: "bg-zinc-950/80 border-white/10 lg:border-transparent"
 				}`}
 			>
 				<div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto">
@@ -105,9 +106,14 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 			<div className="container mx-auto relative isolate overflow-hidden  py-24 sm:py-32">
 				<div className="mx-auto max-w-7xl px-6 lg:px-8 text-center flex flex-col items-center">
 					<div className="mx-auto max-w-2xl lg:mx-0">
-						<h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl font-display">
+						<h1 className="text-4xl font-semibold tracking-tight text-white sm:text-6xl font-display">
 							{project.title}
 						</h1>
+						{project.status && (
+							<p className="mt-4 inline-flex rounded-full border border-white/15 px-4 py-1.5 text-sm text-zinc-300">
+								{project.status}
+							</p>
+						)}
 						<p className="mt-6 text-lg leading-8 text-zinc-300">
 							{project.description}
 						</p>

@@ -1,61 +1,45 @@
 ---
-title: Babyfiction E-Commerce Platform
-description: A full-stack e-commerce platform for fashion and accessories with advanced features
+title: "Babyfiction E-Commerce"
+description: "A fashion and accessories storefront with shopping, delivery, and administration flows."
 repository: ShawnTheCreator/babyfiction
 url: https://babyfictions.netlify.app/
 date: 2025-11-01
 published: true
 ---
 
-## Overview
+Babyfiction is an e-commerce platform for fashion and accessories. The project connects the customer storefront with the tools needed to manage products, orders, promotions, and delivery.
 
-Babyfiction is a production-ready e-commerce platform built for fashion and accessories retail. It features a complete shopping experience with modern UI/UX, comprehensive backend services, and advanced business functionality including driver management, promotions, and multi-channel notifications.
+<ImageSlot
+  label="Home page"
+  src="/images/projects/babyfiction/home-page.webp"
+  alt="Babyfiction storefront home page"
+  variant="commerce"
+/>
 
-## Tech Stack
+## The shopping flow
 
-**Frontend:**
-- Next.js with TypeScript
-- React with Radix UI components
-- Tailwind CSS for styling
-- shadcn/ui component library
+The storefront includes a searchable product catalogue, a cart for guest and signed-in shoppers, a wishlist, and a checkout flow. Product reviews and ratings give each listing a place for customer feedback.
 
-**Backend:**
-- Node.js with Express
-- MongoDB with Mongoose
-- JWT authentication
-- Cloudinary for media management
+<ImageSlot
+  label="Product page"
+  src="/images/projects/babyfiction/products-page.webp"
+  alt="Fashion product page with shopping actions"
+  variant="commerce"
+/>
 
-## Key Features
+## Store operations
 
-### Core E-Commerce
-- Product catalog with categories and search
-- Shopping cart (guest + authenticated users)
-- Wishlist functionality
-- Secure checkout process
-- Order management system
-- Product reviews and ratings
-- Admin dashboard for inventory management
+Inventory management, order handling, and promotions sit alongside a driver portal. The platform also includes newsletter subscriptions, sales analytics, and an AI customer-support chatbot.
 
-### Advanced Features
-- **Email Service** - Resend integration for password resets and order confirmations
-- **SMS Notifications** - Real-time order status updates via SMS gateway
-- **Driver Portal** - Dedicated interface for delivery personnel
-- **Promotions System** - Discount codes, sales, and marketing campaigns
-- **Newsletter System** - Email marketing and subscriber management
-- **Chatbot** - AI-powered customer support
-- **Analytics** - Track user behavior and sales metrics
-- **Google reCAPTCHA** - Security against brute force attacks
+<ImageSlot
+  label="Checkout page"
+  src="/images/projects/babyfiction/checkout-page.webp"
+  alt="Babyfiction checkout page"
+  variant="dashboard"
+/>
 
-### User Experience
-- Responsive, mobile-first design
-- Dark mode UI
-- Real-time cart updates
-- ZAR currency display with 15% VAT calculation
-- Password visibility toggles
-- Persistent cart and wishlist
+## Services and stack
 
-## Architecture Highlights
+The Next.js and TypeScript frontend uses React, Radix UI, Tailwind CSS, and shadcn/ui. An Express API with MongoDB and Mongoose supports the application.
 
-The platform implements a clean separation between frontend and backend services, with robust middleware for authentication, rate limiting, and validation. Cart and wishlist data persist across sessions with MongoDB session storage, while media assets are optimized and delivered through Cloudinary CDN.
-
-If you'd like to explore the implementation details, check out the [Repository on GitHub](https://github.com/ShawnTheCreator/babyfiction).
+The project also integrates JWT authentication, Cloudinary media management, Resend for email, SMS order notifications, and Google reCAPTCHA. The interface displays prices in South African rand and calculates VAT at 15%.

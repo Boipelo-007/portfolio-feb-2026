@@ -1,96 +1,88 @@
 ---
-title: "Taxi Rank & Route Guide"
-description: "A community-driven map that helps people new to a town get around by minibus taxi: where the ranks are, which routes run, and what locals know that no app tells you."
+title: "Hareyeng Taxi Rank & Route Guide"
+description: "A community-minded guide to minibus taxi ranks and routes, built around local travel knowledge."
+url: https://hareyeng-u7rn.vercel.app/
+status: "In production"
 date: "2026-11-08"
 published: true
 ---
 
-## The problem
+Hareyeng is in production as a minibus taxi route guide for people who need a clearer way to understand local travel. The current build maps taxi ranks and the routes connecting them.
 
-Minibus taxis move most people around in South Africa, but if you're new to a town there's nothing that tells you where a rank is, which taxis run your route, or whether you can flag one down mid-route or have to go back to the rank. That knowledge lives in people's heads: fares, hand signs for specific routes, streets to avoid.
+<ImageSlot
+  label="Home page"
+  src="/images/projects/hareyeng/home-page.webp"
+  alt="Hareyeng home page with a map of taxi ranks and routes"
+  variant="map"
+/>
 
-This project tries to put that local knowledge on a map and keep it fresh through the community, not through live tracking.
+## Local knowledge, made visible
 
-## What it does
+Taxi routes are often explained through knowledge shared between passengers and drivers. Hareyeng is designed to give that information a useful place on the map, then build toward community contributions.
 
-- Shows taxi rank locations and the routes running between them
-- Marks whether a route is hailable mid-route or rank-only
-- Lets people contribute fares, danger zones, and the hand signs used to hail specific routes
-- Uses a Waze-style trust model (votes plus a confidence score) so the data stays honest over time
+The longer-term guide includes route segments that can be hailed along the way, fare notes, hand signs, and reports about route conditions. These community features are planned work; the current implementation is focused on rank and route data.
 
-## What I left out on purpose
+<ImageSlot
+  label="Route map"
+  src="/images/projects/hareyeng/route-map.webp"
+  alt="Map view connecting taxi ranks along a route"
+  variant="map"
+/>
 
-No live GPS, no live queue length, no passenger counts. It's one town, not all of South Africa. The value is local knowledge made visible, and building real-time tracking would have buried that. I'd rather ship something small that works than a half-working "Waze for taxis".
+## From map data to an API
 
-## Architecture
+The first version used a local JSON file to prove the map flow. The next step moved rank and route records into MongoDB Atlas and exposed them through an Express API.
 
 ```text
-React + TypeScript (Mapbox GL JS)
-        |
-        |  REST (JSON / GeoJSON)
-        v
-Node + Express API  ──  Mongoose models
-        |
-        v
-MongoDB Atlas (2dsphere indexes)
+React + TypeScript + Mapbox GL JS
+                 |
+            REST / GeoJSON
+                 |
+        Node.js + Express API
+                 |
+       MongoDB Atlas + Mongoose
 ```
 
-The frontend is a renderer. It fetches GeoJSON from the API and hands it to Mapbox as sources and layers. All the data lives in MongoDB, so I can change what's on the map without redeploying anything.
+The frontend requests GeoJSON from the API and passes it to Mapbox as map sources and layers. That keeps map rendering separate from the stored rank and route records.
 
-## Phase 2: replacing hardcoded data with a real backend
+<ImageSlot
+  label="Rank detail"
+  src="/images/projects/hareyeng/rank-detail.webp"
+  alt="Taxi rank detail view with location and connected routes"
+  variant="dashboard"
+/>
 
-In Phase 1 the ranks and routes came from a hand-written JSON file. That proved the visual idea quickly, but every change meant editing code. Phase 2 swaps that file for an Express API backed by MongoDB Atlas.
+## Geospatial data choices
 
-### Data modeling
-
-Three models: `Rank`, `Route`, and `Report`. Only the first two are fully built right now. `Report` exists as a stub that gets filled out in Phase 3.
+Rank locations use GeoJSON points, while routes use GeoJSON line strings. MongoDB 2dsphere indexes support proximity lookups as the dataset grows.
 
 ```ts
 const RankSchema = new Schema({
   name: { type: String, required: true },
   location: {
     type: { type: String, enum: ["Point"], required: true },
-    coordinates: { type: [Number], required: true }, // [lng, lat]
+    coordinates: { type: [Number], required: true }, // [longitude, latitude]
   },
 });
 
 RankSchema.index({ location: "2dsphere" });
 ```
 
-Routes follow the same idea, with a `LineString` for the path and references to the ranks they connect.
+Coordinates follow GeoJSON order: longitude first, latitude second. A repeatable seed script makes it possible to rebuild the local dataset without entering records by hand.
 
-A few decisions worth explaining:
+## Current build and next steps
 
-- **GeoJSON stored natively.** I store locations as real GeoJSON instead of separate `lat` and `lng` fields. Mapbox speaks GeoJSON already, and MongoDB's geospatial queries need it anyway, so there's no translation layer in the middle.
-- **A 2dsphere index.** Without it, "which ranks are near this point?" means scanning every document. With it, MongoDB can answer proximity queries properly, which matters once the dataset grows past a handful of ranks.
-- **Coordinate order.** GeoJSON is `[longitude, latitude]`, the opposite of what Google Maps shows you. Getting this backwards puts your ranks in the ocean. It was the first bug I hit.
+Rank and route models are in place, and the API exposes `GET /api/ranks` and `GET /api/routes`. The `Report` model is still a stub. A practical check for the API-backed flow is to rename a rank in the database and confirm that the updated name appears after refreshing the map.
 
-### Seeding
+| Stage | Planned focus |
+| --- | --- |
+| 3 | Hailable route segments and community reports |
+| 4 | Accounts, voting, confidence scores, and stale-report handling |
+| 5 | Researched local data, mobile layout, and map filters |
+| 6 | Deployment and a public mobile-friendly link |
 
-Data goes into the database through a seed script, not by hand in Compass. The script is repeatable: wipe, insert, done. That means I can rebuild the database from scratch at any point, and anyone cloning the repo can do the same.
+The project is intentionally scoped to one town for now. It does not include live vehicle tracking, queue estimates, or passenger counts.
 
-### API
+## Technology
 
-```text
-GET /api/ranks     → all ranks as GeoJSON
-GET /api/routes    → all routes as GeoJSON
-```
-
-The frontend now fetches from these endpoints instead of importing a static file.
-
-### Phase 2 checkpoint
-
-The test for this phase is simple: rename a rank directly in MongoDB Atlas, refresh the page, and the new name shows up in the map popup. No frontend changes, no redeploy. That's the point at which the map stopped being a demo and became something backed by real data.
-
-## What's next
-
-| Phase | Focus                                                                                          |
-| ----- | ---------------------------------------------------------------------------------------------- |
-| 3     | Core domain features: hailable route segments, reports for danger zones, fares, and hand signs |
-| 4     | Community trust layer: JWT auth, voting, confidence scores, stale-report flagging              |
-| 5     | Polish: real researched data, mobile layout, colorblind-safe legend, filtering                 |
-| 6     | Deployment, README, and a public link anyone can open on their phone                           |
-
-## Stack
-
-React, TypeScript, Mapbox GL JS, Node.js, Express, Mongoose, MongoDB Atlas, JWT (Phase 4), Vercel/Netlify and Render/Railway for deployment (Phase 6).
+React, TypeScript, Mapbox GL JS, Node.js, Express, Mongoose, and MongoDB Atlas form the current stack. JWT authentication and deployment are part of later project stages.
