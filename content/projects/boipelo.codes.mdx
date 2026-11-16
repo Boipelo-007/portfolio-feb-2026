@@ -15,7 +15,6 @@ This portfolio is the home for my software projects and the stories behind them.
   alt="Personal portfolio home page"
   variant="portfolio"
 />
-
 ## Project pages in MDX
 
 Project write-ups live in MDX and are compiled into individual routes with Contentlayer. The format keeps the content easy to revise while supporting code samples, lists, and technical details.
@@ -27,11 +26,11 @@ Project write-ups live in MDX and are compiled into individual routes with Conte
   variant="portfolio"
 />
 
-## A small application stack
+## Stack and delivery
 
-The site uses Next.js App Router, React, and TypeScript. Tailwind CSS handles the interface styling, and Framer Motion powers the interactive project cards.
+The site is built with Next.js App Router, React, TypeScript, Tailwind CSS, Contentlayer, and Framer Motion. Upstash Redis stores page-view counts when configured, and Vercel Analytics tracks site traffic.
 
-Page-view counts use Redis when configured. Vercel Analytics provides an additional view into site traffic. The visual direction stays dark and restrained so the project work remains the focus.
+Project write-ups are authored in MDX and compiled into individual routes. The project detail pages are statically generated at build time, and the live portfolio is available at [boipelo.codes](https://boipelo.codes).
 
 <ImageSlot
   label="Mobile page"
