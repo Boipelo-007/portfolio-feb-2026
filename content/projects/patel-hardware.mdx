@@ -1,56 +1,40 @@
 ---
 title: "Patel Hardware"
-summary: "A MySQL-backed Java web store for browsing hardware inventory, managing a shopping cart, and handling customer accounts."
-technologies:
-  - Java
-  - Java Servlets
-  - Jersey
-  - JDBC
-  - MySQL
-  - Maven
-  - HTML
-  - CSS
-  - JavaScript
-repository: "https://github.com/Boipelo-007/PatelHardware"
+description: "A Java and MySQL hardware store web application with inventory search, customer accounts, and a session-based shopping cart."
+published: true
+date: 2025-06-08
+repository: Boipelo-007/PatelHardware
 ---
 
 # Patel Hardware
 
-Patel Hardware is a full-stack hardware-store web application built as a practical exploration of Java servlet development and relational database integration.
+Patel Hardware is a full-stack hardware-store web application built to explore Java servlet development and relational database integration.
 
-The application provides customer registration and authentication, inventory browsing, search and filtering, session-based access control, and shopping-cart management.
+The application brings customer registration, inventory browsing, search and filtering, session-based access control, and shopping-cart management into one store experience.
 
-## Project Highlights
+## A complete store flow
 
-- Built an inventory catalogue backed by MySQL and JDBC.
-- Implemented registration and login workflows using Java Servlets.
-- Used bcrypt for secure password hashing and verification.
-- Added session-based authentication and protected account actions.
-- Created dynamic inventory, search, and cart interfaces with AJAX and JSON.
-- Added stock-aware cart actions and quantity management.
-- Deployed as a Maven-generated WAR for Servlet-compatible containers.
+Customers can create an account, sign in, browse the hardware catalogue, and manage items in a cart. The application keeps cart operations tied to the signed-in customer and checks availability before quantities are updated.
 
-## Key Features
+## Customer accounts
 
-### Customer Accounts
+Users can register with a username, email address, password, and optional contact details. The server validates required fields and email format, prevents duplicate usernames or email addresses, and stores passwords as bcrypt hashes.
 
-Users can register with a username, email address, password, and optional contact details. The server validates required fields and email format, prevents duplicate usernames or emails, and stores passwords as bcrypt hashes.
+## Inventory and search
 
-### Inventory and Search
+The catalogue exposes item names, catalogue numbers, descriptions, prices, categories, availability, and stock quantities. Customers can browse all inventory or narrow the results through search and filters.
 
-The catalogue exposes items with names, catalogue numbers, descriptions, prices, categories, availability, and stock quantities. Users can browse the complete inventory or search and filter records from the interface.
+## Shopping cart
 
-### Shopping Cart
+Authenticated customers can add available items, change quantities, remove products, review totals, and complete the checkout flow. AJAX and JSON keep inventory and cart updates responsive without requiring a full page reload.
 
-Authenticated customers can add available items to a cart, change quantities, remove products, review totals, and complete a checkout flow. Cart operations are persisted in MySQL and associated with the signed-in user's session.
+## Technical implementation
 
-## Technical Implementation
+Java Servlets handle requests, with JavaBeans-style model classes representing users and inventory items. Jackson serializes server responses into JSON, while the browser uses `fetch` and vanilla JavaScript to update the interface.
 
-The project uses Java Servlets for request handling and JavaBeans-style model classes for users and inventory items. Jackson serializes server responses into JSON, while the browser uses `fetch` requests and vanilla JavaScript to update the interface.
+JDBC handles database access, and prepared statements are used across login, registration, inventory, and cart queries. This keeps user input separate from SQL syntax.
 
-JDBC handles database access. Prepared statements are used for login, registration, inventory, and cart queries, helping separate user input from SQL syntax.
-
-The Maven configuration packages HTML, JSP, classes, and dependencies into a `patel-hardware.war` deployable.
+Maven packages the HTML, JSP, classes, and dependencies into a `patel-hardware.war` file for deployment to a Servlet-compatible container.
 
 ## Architecture
 
@@ -69,13 +53,8 @@ MySQL
 └── cart
 ```
 
-## Challenges and Learning Outcomes
+## What this project taught me
 
-This project provided hands-on experience connecting a browser interface to a Java backend without a framework. It reinforced HTTP session behavior, servlet request/response handling, SQL-backed CRUD operations, password security, JSON APIs, and WAR deployment.
+This project provided hands-on experience connecting a browser interface to a Java backend without a framework. It reinforced HTTP session behavior, servlet request and response handling, SQL-backed CRUD operations, password security, JSON APIs, and WAR deployment.
 
-It also demonstrated the importance of keeping database configuration, schema naming, and connection code consistent across an application.
-
-## Links
-
-- [View the source code](https://github.com/Boipelo-007/PatelHardware)
-- [Read the project documentation](https://github.com/Boipelo-007/PatelHardware#readme)
+It also highlighted the importance of keeping database configuration, schema naming, and connection code consistent across an application.
